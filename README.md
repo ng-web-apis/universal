@@ -1,4 +1,4 @@
-# ![ng-web-apis logo](logo.svg) Angular Universal fallbacks
+# ![logo](logo.svg) Angular Universal fallbacks
 
 > Part of <img src="web-api.svg" align="top"> [Web APIs for Angular](https://ng-web-apis.github.io/)
 
