@@ -17,8 +17,8 @@ function copyExtraFiles() {
 function copyReadmeIntoDistFolder(srcPath, toPath) {
     const fileBody = fs.readFileSync(srcPath).toString();
     const withoutLogos = fileBody
-        .replace('![ng-web-apis logo](projects/demo/src/assets/logo.svg) ', '')
-        .replace('<img src="projects/demo/src/assets/web-api.svg" align="top"> ', '');
+        .replace('# ![ng-web-apis logo](logo.svg) ', '')
+        .replace('<img src="web-api.svg" align="top"> ', '');
 
     fs.writeFileSync(toPath, withoutLogos);
 }

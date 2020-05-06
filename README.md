@@ -1,4 +1,6 @@
-# ![ng-web-apis logo](projects/demo/src/assets/logo.svg) Angular Universal fallbacks Web APIs
+# ![ng-web-apis logo](logo.svg) Angular Universal fallbacks
+
+> Part of <img src="web-api.svg" align="top"> [Web APIs for Angular](https://ng-web-apis.github.io/)
 
 [![npm version](https://img.shields.io/npm/v/@ng-web-apis/universal.svg)](https://npmjs.com/package/@ng-web-apis/universal)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/@ng-web-apis/universal)](https://bundlephobia.com/result?p=@ng-web-apis/universal)
@@ -8,7 +10,7 @@
 A set of fallbacks to seamlessly use
 [@ng-web-apis/common](https://github.com/ng-web-apis/common) in
 [Angular Universal](https://github.com/angular/universal) apps.
-This packages have synced versions down to minor.
+These packages have synced versions down to minor.
 
 ## How to use
 
