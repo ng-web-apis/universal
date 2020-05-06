@@ -1,10 +1,10 @@
 import {ValueProvider} from '@angular/core';
-import {Request} from '../interfaces/request';
+import {IncomingHttpHeaders} from 'http';
 import {SSR_USER_AGENT} from '../tokens/ssr-user-agent';
 
-export function provideUserAgent(req: Request): ValueProvider {
+export function provideUserAgent(req: {headers: IncomingHttpHeaders}): ValueProvider {
     return {
         provide: SSR_USER_AGENT,
-        useValue: req.get('user-agent'),
+        useValue: req.headers['user-agent'],
     };
 }

@@ -1,15 +1,12 @@
 import {TestBed} from '@angular/core/testing';
 import {NAVIGATOR} from '@ng-web-apis/common';
-import {Request} from '../../interfaces/request';
 import {provideUserAgent} from '../../utils/provide-user-agent';
 import {UNIVERSAL_NAVIGATOR} from '../universal-navigator';
 
 describe('UNIVERSAL_NAVIGATOR', () => {
-    const req: Request = {
-        protocol: 'https',
-        originalUrl: '/hapica',
-        get(): string | undefined {
-            return 'hapica';
+    const req = {
+        headers: {
+            'user-agent': 'Chrome',
         },
     };
 
@@ -31,6 +28,6 @@ describe('UNIVERSAL_NAVIGATOR', () => {
             providers: [provideUserAgent(req), UNIVERSAL_NAVIGATOR],
         });
 
-        expect(TestBed.get(NAVIGATOR).userAgent).toBe('hapica');
+        expect(TestBed.get(NAVIGATOR).userAgent).toBe('Chrome');
     });
 });

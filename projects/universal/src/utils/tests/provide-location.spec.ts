@@ -1,20 +1,22 @@
 import {TestBed} from '@angular/core/testing';
-import {Request} from '../../interfaces/request';
+import {IncomingMessage} from 'http';
 import {SSR_LOCATION} from '../../tokens/ssr-location';
 import {provideLocation} from '../provide-location';
 
 describe('provideLocation', () => {
-    const req: Request = {
-        protocol: 'https',
-        originalUrl: '/hapica',
-        get(): string | undefined {
-            return 'localhost:8080';
+    const req: any = {
+        url: '/hapica',
+        socket: {
+            encrypted: true,
+        },
+        headers: {
+            host: 'localhost:8080',
         },
     };
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            providers: [provideLocation(req)],
+            providers: [provideLocation(req as IncomingMessage)],
         });
     });
 

@@ -1,10 +1,11 @@
 import {ValueProvider} from '@angular/core';
-import {Request} from '../interfaces/request';
+import {IncomingMessage} from 'http';
 import {SSR_LOCATION} from '../tokens/ssr-location';
 import {empty} from './functions';
 
-export function provideLocation(req: Request): ValueProvider {
-    const url: any = new URL(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
+export function provideLocation(req: IncomingMessage): ValueProvider {
+    const protocol = 'encrypted' in req.socket ? 'https' : 'http';
+    const url: any = new URL(`${protocol}://${req.headers['host']}${req.url}`);
 
     url.assign = empty;
     url.reload = empty;
