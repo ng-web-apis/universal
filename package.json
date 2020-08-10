@@ -1,6 +1,6 @@
 {
     "name": "@ng-web-apis/universal",
-    "version": "1.5.0",
+    "version": "1.6.0",
     "scripts": {
         "build": "ng build",
         "postbuild": "node scripts/postbuild.js",
@@ -32,7 +32,9 @@
         "name": "Alex Inkin",
         "email": "alexander@inkin.ru"
     },
-    "contributors": ["Roman Sedov <79601794011@ya.ru> (http://marsibarsi.me/)"],
+    "contributors": [
+        "Roman Sedov <79601794011@ya.ru> (http://marsibarsi.me/)"
+    ],
     "repository": "https://github.com/ng-web-apis/universal",
     "bugs": "https://github.com/ng-web-apis/universal/issues",
     "homepage": "https://github.com/ng-web-apis/universal#README",
@@ -102,7 +104,10 @@
         }
     },
     "lint-staged": {
-        "*.{js,ts,html,md,less,json}": ["prettier --write", "git add"],
+        "*.{js,ts,html,md,less,json}": [
+            "prettier --write",
+            "git add"
+        ],
         "*.ts": "tslint"
     },
     "standard-version": {
