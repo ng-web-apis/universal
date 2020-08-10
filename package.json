@@ -32,9 +32,7 @@
         "name": "Alex Inkin",
         "email": "alexander@inkin.ru"
     },
-    "contributors": [
-        "Roman Sedov <79601794011@ya.ru> (http://marsibarsi.me/)"
-    ],
+    "contributors": ["Roman Sedov <79601794011@ya.ru> (http://marsibarsi.me/)"],
     "repository": "https://github.com/ng-web-apis/universal",
     "bugs": "https://github.com/ng-web-apis/universal/issues",
     "homepage": "https://github.com/ng-web-apis/universal#README",
@@ -53,7 +51,7 @@
         "@nguniversal/common": "^7.1.1",
         "@nguniversal/express-engine": "^7.1.1",
         "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
-        "@ng-web-apis/common": "1.4.0",
+        "@ng-web-apis/common": "latest",
         "core-js": "^2.5.4",
         "rxjs": "^6.5.2",
         "tslib": "^1.10.0",
@@ -104,10 +102,7 @@
         }
     },
     "lint-staged": {
-        "*.{js,ts,html,md,less,json}": [
-            "prettier --write",
-            "git add"
-        ],
+        "*.{js,ts,html,md,less,json}": ["prettier --write", "git add"],
         "*.ts": "tslint"
     },
     "standard-version": {

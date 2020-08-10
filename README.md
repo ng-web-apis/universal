@@ -32,6 +32,7 @@ you will get type-safe mocks and you can at least be sure you will not have
 -   `CSS` — no need to do anything, mock object is already injected as if you were using Internet Explorer
 -   `LOCATION` — see _special cases_ below
 -   `LOCAL_STORAGE` — add `UNIVERSAL_LOCAL_STORAGE` for a `Map` based mock for `window.localStorage`
+-   `SESSION_STORAGE` — add `UNIVERSAL_SESSION_STORAGE` for a `Map` based mock for `window.sessionStorage`
 -   `PAGE_VISIBILITY` — no need to do anything
 
 You can also provide all the tokens at once with `UNIVERSAL_TOKENS` constant
