@@ -26,6 +26,7 @@ you will get type-safe mocks and you can at least be sure you will not have
 
 -   `WINDOW` — no need to provide fallback, Angular Universal handles it
 -   `NAVIGATOR` — add `UNIVERSAL_NAVIGATOR` to provide type-safe mock object, effectively mocking all `navigator` related entities
+-   `NETWORK_INFORMATION` — no need to do anything
 -   `USER_AGENT` — see _special cases_ below
 -   `PERFORMANCE` — add `UNIVERSAL_PERFORMANCE` to use Node.js `Performance` class on Server Side
 -   `ANIMATION_FRAME` — add `UNIVERSAL_ANIMATION_FRAME` to fallback to `NEVER` in SSR environment
@@ -33,6 +34,7 @@ you will get type-safe mocks and you can at least be sure you will not have
 -   `LOCATION` — see _special cases_ below
 -   `LOCAL_STORAGE` — add `UNIVERSAL_LOCAL_STORAGE` for a `Map` based mock for `window.localStorage`
 -   `SESSION_STORAGE` — add `UNIVERSAL_SESSION_STORAGE` for a `Map` based mock for `window.sessionStorage`
+-   `SPEECH_SYNTHESIS` — add `UNIVERSAL_SPEECH_SYNTHESIS` for a type-safe mock for `window.speechSynthesis`
 -   `PAGE_VISIBILITY` — no need to do anything
 
 You can also provide all the tokens at once with `UNIVERSAL_TOKENS` constant
