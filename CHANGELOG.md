@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/ng-web-apis/universal/compare/v1.6.0...v1.8.0) (2020-10-27)
+
+
+### Features
+
+* **SPEECH_SYNTHESYS:** add new mock ([#5](https://github.com/ng-web-apis/universal/issues/5)) ([dbb5e43](https://github.com/ng-web-apis/universal/commit/dbb5e43eae1364611e74ac40f74e7f504ad06634))
+
 ## [1.6.0](https://github.com/ng-web-apis/universal/compare/v1.5.0...v1.6.0) (2020-08-10)
 
 
