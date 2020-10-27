@@ -3,7 +3,7 @@
     "version": "1.6.0",
     "peerDependencies": {
         "@angular/core": ">=6.0.0",
-        "@ng-web-apis/common": "1.6.0",
+        "@ng-web-apis/common": ">=1.8.0",
         "@types/node": ">=10.0.0",
         "rxjs": ">=6.0.0"
     },
