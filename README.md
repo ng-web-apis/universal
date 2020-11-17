@@ -34,6 +34,7 @@ you will get type-safe mocks and you can at least be sure you will not have
 -   `LOCATION` — see _special cases_ below
 -   `LOCAL_STORAGE` — add `UNIVERSAL_LOCAL_STORAGE` for a `Map` based mock for `window.localStorage`
 -   `SESSION_STORAGE` — add `UNIVERSAL_SESSION_STORAGE` for a `Map` based mock for `window.sessionStorage`
+-   `SPEECH_RECOGNITION` — no need to do anything
 -   `SPEECH_SYNTHESIS` — add `UNIVERSAL_SPEECH_SYNTHESIS` for a type-safe mock for `window.speechSynthesis`
 -   `PAGE_VISIBILITY` — no need to do anything
 
