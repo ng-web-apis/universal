@@ -1,5 +1,3 @@
-const NEVER = new Promise<any>(empty);
-
 export function identity<T>(v: T): T {
     return v;
 }
@@ -22,6 +20,6 @@ export function alwaysZero(): number {
     return 0;
 }
 
-export function alwaysPending(): Promise<any> {
-    return NEVER;
+export function alwaysRejected(): Promise<any> {
+    return Promise.reject();
 }

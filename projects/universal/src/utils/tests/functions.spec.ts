@@ -1,6 +1,6 @@
 import {
     alwaysFalse,
-    alwaysPending,
+    alwaysRejected,
     alwaysZero,
     empty,
     emptyArray,
@@ -35,7 +35,7 @@ describe('Functions', () => {
         expect(alwaysZero()).toBe(0);
     });
 
-    it('alwaysPending returns pending Promise', () => {
-        expect(alwaysPending() instanceof Promise).toBe(true);
+    it('alwaysRejected returns a rejected Promise', () => {
+        expect(alwaysRejected() instanceof Promise).toBe(true);
     });
 });

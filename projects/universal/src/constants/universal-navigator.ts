@@ -3,7 +3,7 @@ import {NAVIGATOR} from '@ng-web-apis/common';
 import {SSR_USER_AGENT} from '../tokens/ssr-user-agent';
 import {
     alwaysFalse,
-    alwaysPending,
+    alwaysRejected,
     alwaysZero,
     empty,
     emptyArray,
@@ -83,26 +83,26 @@ export function navigatorFactory(userAgent: string | null): NavigatorLike {
 
         hardwareConcurrency: 0,
 
-        getDisplayMedia: alwaysPending,
+        getDisplayMedia: alwaysRejected,
 
         language: '',
         languages: [],
 
         storage: {
-            estimate: alwaysPending,
-            persist: alwaysPending,
-            persisted: alwaysPending,
+            estimate: alwaysRejected,
+            persist: alwaysRejected,
+            persisted: alwaysRejected,
         },
 
         activeVRDisplays: [],
         authentication: {
-            getAssertion: alwaysPending,
-            makeCredential: alwaysPending,
+            getAssertion: alwaysRejected,
+            makeCredential: alwaysRejected,
         },
         clipboard: {
             ...EVENT_TARGET,
-            readText: alwaysPending,
-            writeText: alwaysPending,
+            readText: alwaysRejected,
+            writeText: alwaysRejected,
         },
         cookieEnabled: false,
         doNotTrack: null,
@@ -116,16 +116,16 @@ export function navigatorFactory(userAgent: string | null): NavigatorLike {
         mediaDevices: {
             ...EVENT_TARGET,
             ondevicechange: null,
-            enumerateDevices: alwaysPending,
+            enumerateDevices: alwaysRejected,
             getSupportedConstraints: emptyObject,
-            getUserMedia: alwaysPending,
+            getUserMedia: alwaysRejected,
         },
         mimeTypes: MIME_TYPES,
         msManipulationViewsEnabled: false,
         msMaxTouchPoints: 0,
         msPointerEnabled: false,
         permissions: {
-            query: alwaysPending,
+            query: alwaysRejected,
         },
         plugins: MIME_TYPES,
         pointerEnabled: false,
@@ -135,19 +135,19 @@ export function navigatorFactory(userAgent: string | null): NavigatorLike {
             oncontrollerchange: null,
             onmessage: null,
             onmessageerror: null,
-            ready: alwaysPending(),
-            getRegistration: alwaysPending,
-            getRegistrations: alwaysPending,
-            register: alwaysPending,
+            ready: alwaysRejected(),
+            getRegistration: alwaysRejected,
+            getRegistrations: alwaysRejected,
+            register: alwaysRejected,
             startMessages: empty,
         },
         webdriver: false,
         getGamepads: emptyArray,
         getUserMedia: empty,
-        getVRDisplays: alwaysPending,
+        getVRDisplays: alwaysRejected,
         javaEnabled: alwaysFalse,
         msLaunchUri: empty,
-        requestMediaKeySystemAccess: alwaysPending,
+        requestMediaKeySystemAccess: alwaysRejected,
         vibrate: alwaysFalse,
     };
 }
