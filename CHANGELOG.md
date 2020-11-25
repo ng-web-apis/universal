@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.1](https://github.com/ng-web-apis/universal/compare/v1.9.0...v1.9.1) (2020-11-25)
+
+
+### Bug Fixes
+
+* **navigator:** fix rejected Promise error and add mocks for native classes ([#6](https://github.com/ng-web-apis/universal/issues/6)) ([6db2660](https://github.com/ng-web-apis/universal/commit/6db2660a103053b844ba4790eaf73f0be79e42a1))
+
 ## [1.9.0](https://github.com/ng-web-apis/universal/compare/v1.8.0...v1.9.0) (2020-11-17)
 
 

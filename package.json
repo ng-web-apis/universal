@@ -1,6 +1,6 @@
 {
     "name": "@ng-web-apis/universal",
-    "version": "1.9.0",
+    "version": "1.9.1",
     "scripts": {
         "build": "ng build",
         "postbuild": "node scripts/postbuild.js",
