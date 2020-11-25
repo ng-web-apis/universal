@@ -22,6 +22,14 @@ will provide the same functionality on the server side as you have in browser. I
 you will get type-safe mocks and you can at least be sure you will not have
 `cannot read propery of null` or `undefined is not a function` errors in SSR.
 
+## Mocks
+
+Add following line to your `server.ts` to mock native classes used in other @ng-web-apis packages:
+
+```js
+import '@ng-web-apis/universal/mocks';
+```
+
 ## Tokens
 
 -   `WINDOW` — no need to provide fallback, Angular Universal handles it
@@ -38,7 +46,7 @@ you will get type-safe mocks and you can at least be sure you will not have
 -   `SPEECH_SYNTHESIS` — add `UNIVERSAL_SPEECH_SYNTHESIS` for a type-safe mock for `window.speechSynthesis`
 -   `PAGE_VISIBILITY` — no need to do anything
 
-You can also provide all the tokens at once with `UNIVERSAL_TOKENS` constant
+You can also provide all the tokens at once with `UNIVERSAL_PROVIDERS` constant
 
 ## Special cases
 
