@@ -21,5 +21,5 @@ export function alwaysZero(): number {
 }
 
 export function alwaysRejected(): Promise<any> {
-    return Promise.reject();
+    return Promise.reject().catch(empty);
 }
