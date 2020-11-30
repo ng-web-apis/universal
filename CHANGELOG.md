@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.2](https://github.com/ng-web-apis/universal/compare/v1.9.1...v1.9.2) (2020-11-30)
+
+
+### Bug Fixes
+
+* **mocks:** add mocks to side effects so they are not tree shaken ([777a1e0](https://github.com/ng-web-apis/universal/commit/777a1e0b1969a2b8a7459de51c25fdadd12b8c53))
+
 ### [1.9.1](https://github.com/ng-web-apis/universal/compare/v1.9.0...v1.9.1) (2020-11-25)
 
 
