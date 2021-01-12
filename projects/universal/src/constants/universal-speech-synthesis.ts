@@ -1,5 +1,5 @@
 import {ValueProvider} from '@angular/core';
-import {LOCAL_STORAGE} from '@ng-web-apis/common';
+import {SPEECH_SYNTHESIS} from '@ng-web-apis/common';
 import {alwaysFalse, empty, emptyArray} from '../utils/functions';
 
 const MOCK: SpeechSynthesis = {
@@ -18,6 +18,6 @@ const MOCK: SpeechSynthesis = {
 };
 
 export const UNIVERSAL_SPEECH_SYNTHESIS: ValueProvider = {
-    provide: LOCAL_STORAGE,
+    provide: SPEECH_SYNTHESIS,
     useValue: MOCK,
 };
