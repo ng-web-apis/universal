@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.3](https://github.com/ng-web-apis/universal/compare/v1.9.2...v1.9.3) (2021-01-12)
+
+
+### Bug Fixes
+
+* **LOCAL_STORAGE:** fix incorrect provider ([676d5e4](https://github.com/ng-web-apis/universal/commit/676d5e46de22a864024ff8f7e2c835332460c3b8))
+
 ### [1.9.2](https://github.com/ng-web-apis/universal/compare/v1.9.1...v1.9.2) (2020-11-30)
 
 
