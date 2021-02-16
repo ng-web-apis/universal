@@ -1,20 +1,15 @@
 import {FactoryProvider, Optional} from '@angular/core';
 import {NAVIGATOR} from '@ng-web-apis/common';
 import {SSR_USER_AGENT} from '../tokens/ssr-user-agent';
+import {EVENT_TARGET} from '../utils/event-target';
 import {
     alwaysFalse,
     alwaysRejected,
     alwaysZero,
-    empty,
     emptyArray,
+    emptyFunction,
     emptyObject,
 } from '../utils/functions';
-
-const EVENT_TARGET: EventTarget = {
-    addEventListener: empty,
-    dispatchEvent: alwaysFalse,
-    removeEventListener: empty,
-};
 
 const PLUGIN = new (class extends Array<MimeType> implements Plugin {
     readonly description = '';
@@ -71,10 +66,10 @@ export function navigatorFactory(userAgent: string | null): NavigatorLike {
 
         confirmSiteSpecificTrackingException: alwaysFalse,
         confirmWebWideTrackingException: alwaysFalse,
-        removeSiteSpecificTrackingException: empty,
-        removeWebWideTrackingException: empty,
-        storeSiteSpecificTrackingException: empty,
-        storeWebWideTrackingException: empty,
+        removeSiteSpecificTrackingException: emptyFunction,
+        removeWebWideTrackingException: emptyFunction,
+        storeSiteSpecificTrackingException: emptyFunction,
+        storeWebWideTrackingException: emptyFunction,
 
         msSaveBlob: alwaysFalse,
         msSaveOrOpenBlob: alwaysFalse,
@@ -108,8 +103,8 @@ export function navigatorFactory(userAgent: string | null): NavigatorLike {
         doNotTrack: null,
         gamepadInputEmulation: 'keyboard',
         geolocation: {
-            clearWatch: empty,
-            getCurrentPosition: empty,
+            clearWatch: emptyFunction,
+            getCurrentPosition: emptyFunction,
             watchPosition: alwaysZero,
         },
         maxTouchPoints: 0,
@@ -139,14 +134,14 @@ export function navigatorFactory(userAgent: string | null): NavigatorLike {
             getRegistration: alwaysRejected,
             getRegistrations: alwaysRejected,
             register: alwaysRejected,
-            startMessages: empty,
+            startMessages: emptyFunction,
         },
         webdriver: false,
         getGamepads: emptyArray,
-        getUserMedia: empty,
+        getUserMedia: emptyFunction,
         getVRDisplays: alwaysRejected,
         javaEnabled: alwaysFalse,
-        msLaunchUri: empty,
+        msLaunchUri: emptyFunction,
         requestMediaKeySystemAccess: alwaysRejected,
         vibrate: alwaysFalse,
     };

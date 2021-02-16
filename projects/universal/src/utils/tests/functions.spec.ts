@@ -1,9 +1,10 @@
 import {
     alwaysFalse,
+    alwaysNull,
     alwaysRejected,
     alwaysZero,
-    empty,
     emptyArray,
+    emptyFunction,
     emptyObject,
     identity,
 } from '../functions';
@@ -15,8 +16,8 @@ describe('Functions', () => {
         expect(identity(item)).toBe(item);
     });
 
-    it('empty returns nothing', () => {
-        expect(empty()).toBeUndefined();
+    it('emptyFunction returns nothing', () => {
+        expect(emptyFunction()).toBeUndefined();
     });
 
     it('emptyArray returns empty array', () => {
@@ -29,6 +30,10 @@ describe('Functions', () => {
 
     it('alwaysFalse returns false', () => {
         expect(alwaysFalse()).toBe(false);
+    });
+
+    it('alwaysNull returns null', () => {
+        expect(alwaysNull()).toBeNull();
     });
 
     it('alwaysZero returns 0', () => {

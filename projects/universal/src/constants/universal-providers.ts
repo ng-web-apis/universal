@@ -7,6 +7,7 @@ import {UNIVERSAL_PERFORMANCE} from './universal-performance';
 import {UNIVERSAL_SESSION_STORAGE} from './universal-session-storage';
 import {UNIVERSAL_SPEECH_SYNTHESIS} from './universal-speech-synthesis';
 import {UNIVERSAL_USER_AGENT} from './universal-user-agent';
+import {UNIVERSAL_WINDOW} from './universal-window';
 
 export const UNIVERSAL_PROVIDERS: Provider[] = [
     UNIVERSAL_ANIMATION_FRAME,
@@ -17,6 +18,7 @@ export const UNIVERSAL_PROVIDERS: Provider[] = [
     UNIVERSAL_PERFORMANCE,
     UNIVERSAL_SPEECH_SYNTHESIS,
     UNIVERSAL_USER_AGENT,
+    UNIVERSAL_WINDOW,
 ];
 
 /** @deprecated use {@link UNIVERSAL_PROVIDERS} */
