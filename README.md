@@ -22,6 +22,8 @@ will provide the same functionality on the server side as you have in browser. I
 you will get type-safe mocks and you can at least be sure you will not have
 `cannot read propery of null` or `undefined is not a function` errors in SSR.
 
+> **IMPORTANT:** This library relies on **_Node.js_ v10** and above on your server side
+
 ## Mocks
 
 Add following line to your `server.ts` to mock native classes used in other @ng-web-apis packages:
@@ -32,7 +34,19 @@ import '@ng-web-apis/universal/mocks';
 
 ## Tokens
 
--   `WINDOW` — no need to provide fallback, Angular Universal handles it
+You can provide tokens from this package into your `app.server.module.ts`
+to have type safe mocks for global objects on server side:
+
+```ts
+@NgModule({
+    imports: [AppBrowserModule, ServerModule],
+    bootstrap: [AppComponent],
+    providers: [UNIVERSAL_WINDOW],
+})
+export class AppServerModule {}
+```
+
+-   `WINDOW` — add `UNIVERSAL_WINDOW` to provide type-safe mock object, effectively mocking all `navigator` related entities
 -   `NAVIGATOR` — add `UNIVERSAL_NAVIGATOR` to provide type-safe mock object, effectively mocking all `navigator` related entities
 -   `NETWORK_INFORMATION` — no need to do anything
 -   `USER_AGENT` — see _special cases_ below

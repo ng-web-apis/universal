@@ -1,23 +1,23 @@
 import {ValueProvider} from '@angular/core';
 import {SPEECH_SYNTHESIS} from '@ng-web-apis/common';
-import {alwaysFalse, empty, emptyArray} from '../utils/functions';
+import {alwaysFalse, emptyArray, emptyFunction} from '../utils/functions';
 
-const MOCK: SpeechSynthesis = {
+export const SPEECH_SYNTHESIS_MOCK: SpeechSynthesis = {
     paused: false,
     pending: false,
     speaking: false,
-    onvoiceschanged: empty,
-    addEventListener: empty,
-    removeEventListener: empty,
+    onvoiceschanged: emptyFunction,
+    addEventListener: emptyFunction,
+    removeEventListener: emptyFunction,
     dispatchEvent: alwaysFalse,
-    cancel: empty,
-    pause: empty,
-    resume: empty,
-    speak: empty,
+    cancel: emptyFunction,
+    pause: emptyFunction,
+    resume: emptyFunction,
+    speak: emptyFunction,
     getVoices: emptyArray,
 };
 
 export const UNIVERSAL_SPEECH_SYNTHESIS: ValueProvider = {
     provide: SPEECH_SYNTHESIS,
-    useValue: MOCK,
+    useValue: SPEECH_SYNTHESIS_MOCK,
 };
