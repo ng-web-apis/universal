@@ -34,6 +34,18 @@ import '@ng-web-apis/universal/mocks';
 
 ## Tokens
 
+You can provide tokens from this package into your `app.server.module.ts`
+to have type safe mocks for global objects on server side:
+
+```ts
+@NgModule({
+    imports: [AppBrowserModule, ServerModule],
+    bootstrap: [AppComponent],
+    providers: [UNIVERSAL_WINDOW],
+})
+export class AppServerModule {}
+```
+
 -   `WINDOW` — add `UNIVERSAL_WINDOW` to provide type-safe mock object, effectively mocking all `navigator` related entities
 -   `NAVIGATOR` — add `UNIVERSAL_NAVIGATOR` to provide type-safe mock object, effectively mocking all `navigator` related entities
 -   `NETWORK_INFORMATION` — no need to do anything

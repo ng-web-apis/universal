@@ -1,15 +1,10 @@
 import {DOCUMENT} from '@angular/common';
-import {FactoryProvider} from '@angular/core';
-import {
-    LOCAL_STORAGE,
-    LOCATION,
-    NAVIGATOR,
-    PERFORMANCE,
-    SESSION_STORAGE,
-    SPEECH_SYNTHESIS,
-    WINDOW,
-} from '@ng-web-apis/common';
+import {FactoryProvider, Optional} from '@angular/core';
+import {WINDOW} from '@ng-web-apis/common';
 import {BlobMock} from '../classes/blob-mock';
+import {StorageMock} from '../classes/storage-mock';
+import {SSR_LOCATION} from '../tokens/ssr-location';
+import {SSR_USER_AGENT} from '../tokens/ssr-user-agent';
 import {EVENT_TARGET} from '../utils/event-target';
 import {
     alwaysFalse,
@@ -19,6 +14,9 @@ import {
     emptyFunction,
     identity,
 } from '../utils/functions';
+import {NAVIGATOR_MOCK} from './universal-navigator';
+import {performanceFactory} from './universal-performance';
+import {SPEECH_SYNTHESIS_MOCK} from './universal-speech-synthesis';
 
 const COMPUTED_STYLES: Partial<CSSStyleDeclaration> = {
     getPropertyPriority: () => '',
@@ -65,22 +63,18 @@ const WINDOW_HANDLER: ProxyHandler<Window> = {
 
 export function windowFactory(
     document: Document,
-    navigator: Navigator,
-    localStorage: Storage,
     location: Location,
-    performance: Performance,
-    sessionStorage: Storage,
-    speechSynthesis: SpeechSynthesis,
+    userAgent: string,
 ): Window {
     const windowMock: Window = {
         ...EVENT_TARGET,
         document,
-        localStorage,
-        location,
-        navigator,
-        performance,
-        sessionStorage,
-        speechSynthesis,
+        localStorage: new StorageMock(),
+        location: location || {},
+        navigator: {...NAVIGATOR_MOCK, userAgent: userAgent || ''},
+        performance: performanceFactory(),
+        sessionStorage: new StorageMock(),
+        speechSynthesis: SPEECH_SYNTHESIS_MOCK,
         URL,
         URLSearchParams,
         setTimeout,
@@ -205,14 +199,6 @@ export function windowFactory(
 
 export const UNIVERSAL_WINDOW: FactoryProvider = {
     provide: WINDOW,
-    deps: [
-        DOCUMENT,
-        LOCAL_STORAGE,
-        LOCATION,
-        NAVIGATOR,
-        PERFORMANCE,
-        SESSION_STORAGE,
-        SPEECH_SYNTHESIS,
-    ],
+    deps: [DOCUMENT, [new Optional(), SSR_LOCATION], [new Optional(), SSR_USER_AGENT]],
     useFactory: windowFactory,
 };

@@ -2,7 +2,7 @@ import {ValueProvider} from '@angular/core';
 import {SPEECH_SYNTHESIS} from '@ng-web-apis/common';
 import {alwaysFalse, emptyArray, emptyFunction} from '../utils/functions';
 
-const MOCK: SpeechSynthesis = {
+export const SPEECH_SYNTHESIS_MOCK: SpeechSynthesis = {
     paused: false,
     pending: false,
     speaking: false,
@@ -19,5 +19,5 @@ const MOCK: SpeechSynthesis = {
 
 export const UNIVERSAL_SPEECH_SYNTHESIS: ValueProvider = {
     provide: SPEECH_SYNTHESIS,
-    useValue: MOCK,
+    useValue: SPEECH_SYNTHESIS_MOCK,
 };

@@ -50,100 +50,105 @@ interface NavigatorLike extends Navigator {
     [key: string]: any;
 }
 
+export const NAVIGATOR_MOCK: NavigatorLike = {
+    appCodeName: '',
+    appName: '',
+    appVersion: '',
+    platform: '',
+    product: '',
+    productSub: '',
+    userAgent: '',
+    vendor: '',
+    vendorSub: '',
+
+    onLine: false,
+
+    confirmSiteSpecificTrackingException: alwaysFalse,
+    confirmWebWideTrackingException: alwaysFalse,
+    removeSiteSpecificTrackingException: emptyFunction,
+    removeWebWideTrackingException: emptyFunction,
+    storeSiteSpecificTrackingException: emptyFunction,
+    storeWebWideTrackingException: emptyFunction,
+
+    msSaveBlob: alwaysFalse,
+    msSaveOrOpenBlob: alwaysFalse,
+
+    sendBeacon: alwaysFalse,
+
+    hardwareConcurrency: 0,
+
+    getDisplayMedia: alwaysRejected,
+
+    language: '',
+    languages: [],
+
+    storage: {
+        estimate: alwaysRejected,
+        persist: alwaysRejected,
+        persisted: alwaysRejected,
+    },
+
+    activeVRDisplays: [],
+    authentication: {
+        getAssertion: alwaysRejected,
+        makeCredential: alwaysRejected,
+    },
+    clipboard: {
+        ...EVENT_TARGET,
+        readText: alwaysRejected,
+        writeText: alwaysRejected,
+    },
+    cookieEnabled: false,
+    doNotTrack: null,
+    gamepadInputEmulation: 'keyboard',
+    geolocation: {
+        clearWatch: emptyFunction,
+        getCurrentPosition: emptyFunction,
+        watchPosition: alwaysZero,
+    },
+    maxTouchPoints: 0,
+    mediaDevices: {
+        ...EVENT_TARGET,
+        ondevicechange: null,
+        enumerateDevices: alwaysRejected,
+        getSupportedConstraints: emptyObject,
+        getUserMedia: alwaysRejected,
+    },
+    mimeTypes: MIME_TYPES,
+    msManipulationViewsEnabled: false,
+    msMaxTouchPoints: 0,
+    msPointerEnabled: false,
+    permissions: {
+        query: alwaysRejected,
+    },
+    plugins: MIME_TYPES,
+    pointerEnabled: false,
+    serviceWorker: {
+        ...EVENT_TARGET,
+        controller: null,
+        oncontrollerchange: null,
+        onmessage: null,
+        onmessageerror: null,
+        ready: alwaysRejected(),
+        getRegistration: alwaysRejected,
+        getRegistrations: alwaysRejected,
+        register: alwaysRejected,
+        startMessages: emptyFunction,
+    },
+    webdriver: false,
+    getGamepads: emptyArray,
+    getUserMedia: emptyFunction,
+    getVRDisplays: alwaysRejected,
+    javaEnabled: alwaysFalse,
+    msLaunchUri: emptyFunction,
+    requestMediaKeySystemAccess: alwaysRejected,
+    vibrate: alwaysFalse,
+};
+
 export function navigatorFactory(userAgent: string | null): NavigatorLike {
     return {
-        appCodeName: '',
-        appName: '',
-        appVersion: '',
-        platform: '',
-        product: '',
-        productSub: '',
+        ...NAVIGATOR_MOCK,
         userAgent: userAgent || '',
-        vendor: '',
-        vendorSub: '',
-
-        onLine: false,
-
-        confirmSiteSpecificTrackingException: alwaysFalse,
-        confirmWebWideTrackingException: alwaysFalse,
-        removeSiteSpecificTrackingException: emptyFunction,
-        removeWebWideTrackingException: emptyFunction,
-        storeSiteSpecificTrackingException: emptyFunction,
-        storeWebWideTrackingException: emptyFunction,
-
-        msSaveBlob: alwaysFalse,
-        msSaveOrOpenBlob: alwaysFalse,
-
-        sendBeacon: alwaysFalse,
-
-        hardwareConcurrency: 0,
-
-        getDisplayMedia: alwaysRejected,
-
-        language: '',
-        languages: [],
-
-        storage: {
-            estimate: alwaysRejected,
-            persist: alwaysRejected,
-            persisted: alwaysRejected,
-        },
-
-        activeVRDisplays: [],
-        authentication: {
-            getAssertion: alwaysRejected,
-            makeCredential: alwaysRejected,
-        },
-        clipboard: {
-            ...EVENT_TARGET,
-            readText: alwaysRejected,
-            writeText: alwaysRejected,
-        },
-        cookieEnabled: false,
-        doNotTrack: null,
-        gamepadInputEmulation: 'keyboard',
-        geolocation: {
-            clearWatch: emptyFunction,
-            getCurrentPosition: emptyFunction,
-            watchPosition: alwaysZero,
-        },
-        maxTouchPoints: 0,
-        mediaDevices: {
-            ...EVENT_TARGET,
-            ondevicechange: null,
-            enumerateDevices: alwaysRejected,
-            getSupportedConstraints: emptyObject,
-            getUserMedia: alwaysRejected,
-        },
-        mimeTypes: MIME_TYPES,
-        msManipulationViewsEnabled: false,
-        msMaxTouchPoints: 0,
-        msPointerEnabled: false,
-        permissions: {
-            query: alwaysRejected,
-        },
-        plugins: MIME_TYPES,
-        pointerEnabled: false,
-        serviceWorker: {
-            ...EVENT_TARGET,
-            controller: null,
-            oncontrollerchange: null,
-            onmessage: null,
-            onmessageerror: null,
-            ready: alwaysRejected(),
-            getRegistration: alwaysRejected,
-            getRegistrations: alwaysRejected,
-            register: alwaysRejected,
-            startMessages: emptyFunction,
-        },
-        webdriver: false,
-        getGamepads: emptyArray,
-        getUserMedia: emptyFunction,
-        getVRDisplays: alwaysRejected,
-        javaEnabled: alwaysFalse,
-        msLaunchUri: emptyFunction,
-        requestMediaKeySystemAccess: alwaysRejected,
-        vibrate: alwaysFalse,
     };
 }
 
