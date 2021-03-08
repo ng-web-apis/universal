@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.4](https://github.com/ng-web-apis/universal/compare/v1.9.3...v1.9.4) (2021-03-08)
+
+
+### Bug Fixes
+
+* **WINDOW:** provide typesafe mock for `WINDOW` ([#9](https://github.com/ng-web-apis/universal/issues/9)) ([9ec57bb](https://github.com/ng-web-apis/universal/commit/9ec57bb53171bcc8715afd3e87eb94dc59ea010b))
+
 ### [1.9.3](https://github.com/ng-web-apis/universal/compare/v1.9.2...v1.9.3) (2021-01-12)
 
 ### Bug Fixes
