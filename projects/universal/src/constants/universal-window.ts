@@ -84,7 +84,7 @@ export function windowFactory(
         console,
         Blob: BlobMock,
         alert: emptyFunction,
-        clientInformation: navigator,
+        clientInformation: {...NAVIGATOR_MOCK, userAgent: userAgent || ''},
         // TODO: Candidate for token
         matchMedia: () => ({
             ...EVENT_TARGET,
