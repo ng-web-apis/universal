@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.5](https://github.com/ng-web-apis/universal/compare/v1.9.4...v1.9.5) (2021-03-12)
+
+
+### Bug Fixes
+
+* **WINDOW:** fix `navigator` used in `clientInformation` ([89cbabb](https://github.com/ng-web-apis/universal/commit/89cbabb28ef01a5a18e5bf675b6fe3e58e7ef976))
+
 ### [1.9.4](https://github.com/ng-web-apis/universal/compare/v1.9.3...v1.9.4) (2021-03-08)
 
 
