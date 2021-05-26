@@ -17,3 +17,6 @@ export * from './constants/universal-providers';
 // Utils
 export * from './utils/provide-location';
 export * from './utils/provide-user-agent';
+
+// Module
+export * from './module';
