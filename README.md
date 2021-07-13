@@ -52,8 +52,7 @@ export class AppServerModule {}
 ## Special cases
 
 When you use plain SSR without prerender you can retrieve some of the information
-from requests. You can couple `UNIVERSAL_NAVIGATOR`, `UNIVERSAL_USER_AGENT` and
-`UNIVERSAL_LOCATION` providers with following helpers to harvest that info:
+from requests. Use the following helpers to harvest that info:
 
 **server.ts:**
 
