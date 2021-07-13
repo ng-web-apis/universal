@@ -3,6 +3,9 @@
  */
 // Constants
 export * from './constants/universal-animation-frame';
+export * from './constants/universal-caches';
+export * from './constants/universal-crypto';
+export * from './constants/universal-history';
 export * from './constants/universal-local-storage';
 export * from './constants/universal-location';
 export * from './constants/universal-navigator';

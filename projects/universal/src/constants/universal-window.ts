@@ -14,6 +14,8 @@ import {
     emptyFunction,
     identity,
 } from '../utils/functions';
+import {CACHES_MOCK} from './universal-caches';
+import {CRYPTO_MOCK} from './universal-crypto';
 import {NAVIGATOR_MOCK} from './universal-navigator';
 import {performanceFactory} from './universal-performance';
 import {SPEECH_SYNTHESIS_MOCK} from './universal-speech-synthesis';
@@ -75,6 +77,8 @@ export function windowFactory(
         performance: performanceFactory(),
         sessionStorage: new StorageMock(),
         speechSynthesis: SPEECH_SYNTHESIS_MOCK,
+        caches: CACHES_MOCK,
+        crypto: CRYPTO_MOCK,
         URL,
         URLSearchParams,
         setTimeout,
@@ -95,14 +99,6 @@ export function windowFactory(
             removeListener: emptyFunction,
         }),
         // TODO: Candidate for token
-        caches: {
-            delete: () => Promise.resolve(false),
-            has: () => Promise.resolve(false),
-            keys: () => Promise.resolve([]),
-            match: alwaysRejected,
-            open: alwaysRejected,
-        },
-        // TODO: Candidate for token
         indexedDB: {
             cmp: alwaysZero,
             open: () => DB_REQUEST,
@@ -117,10 +113,6 @@ export function windowFactory(
         styleMedia: {
             type: '',
             matchMedium: alwaysFalse,
-        },
-        crypto: {
-            subtle: undefined as any, // Insecure context
-            getRandomValues: identity,
         },
         history: {
             length: 0,

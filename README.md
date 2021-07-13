@@ -35,32 +35,19 @@ import '@ng-web-apis/universal/mocks';
 ## Tokens
 
 You can provide tokens from this package into your `app.server.module.ts`
-to have type safe mocks for global objects on server side:
+to have type safe mocks for global objects on server side with `UniversalModule`:
 
 ```ts
 @NgModule({
-    imports: [AppBrowserModule, ServerModule],
+    imports: [
+        AppBrowserModule,
+        ServerModule,
+        UniversalModule, // <-- add this
+    ],
     bootstrap: [AppComponent],
-    providers: [UNIVERSAL_WINDOW],
 })
 export class AppServerModule {}
 ```
-
--   `WINDOW` — add `UNIVERSAL_WINDOW` to provide type-safe mock object, effectively mocking all `navigator` related entities
--   `NAVIGATOR` — add `UNIVERSAL_NAVIGATOR` to provide type-safe mock object, effectively mocking all `navigator` related entities
--   `NETWORK_INFORMATION` — no need to do anything
--   `USER_AGENT` — see _special cases_ below
--   `PERFORMANCE` — add `UNIVERSAL_PERFORMANCE` to use Node.js `Performance` class on Server Side
--   `ANIMATION_FRAME` — add `UNIVERSAL_ANIMATION_FRAME` to fallback to `NEVER` in SSR environment
--   `CSS` — no need to do anything, mock object is already injected as if you were using Internet Explorer
--   `LOCATION` — see _special cases_ below
--   `LOCAL_STORAGE` — add `UNIVERSAL_LOCAL_STORAGE` for a `Map` based mock for `window.localStorage`
--   `SESSION_STORAGE` — add `UNIVERSAL_SESSION_STORAGE` for a `Map` based mock for `window.sessionStorage`
--   `SPEECH_RECOGNITION` — no need to do anything
--   `SPEECH_SYNTHESIS` — add `UNIVERSAL_SPEECH_SYNTHESIS` for a type-safe mock for `window.speechSynthesis`
--   `PAGE_VISIBILITY` — no need to do anything
-
-You can also provide all the tokens at once with `UNIVERSAL_PROVIDERS` constant
 
 ## Special cases
 
@@ -78,15 +65,4 @@ app.get('/**/*', (req: Request, res: Response) => {
         providers: [provideLocation(req), provideUserAgent(req)],
     });
 });
-```
-
-**_app.server.module.ts_**
-
-```typescript
-@NgModule({
-    imports: [AppModule, ServerModule],
-    bootstrap: [AppComponent],
-    providers: [UNIVERSAL_NAVIGATOR, UNIVERSAL_USER_AGENT, UNIVERSAL_LOCATION],
-})
-export class ServerAppModule {}
 ```
