@@ -16,7 +16,7 @@ These packages have synced versions down to minor.
 
 Add constants imported from this package to providers of your `ServerAppModule`.
 Typically, you can also use these mocks for tests. Idea of this package is — you shouldn't
-have to mock DOM on the server side or test `isPLatformBrowser` all the time. Instead,
+have to mock DOM on the server side or test `isPlatformBrowser` all the time. Instead,
 you leverage Angular DI system to abstract from implementation. When possible, this package
 will provide the same functionality on the server side as you have in browser. In other cases
 you will get type-safe mocks and you can at least be sure you will not have
@@ -32,6 +32,7 @@ Add following line to your `server.ts` to mock native classes used in other @ng-
 import '@ng-web-apis/universal/mocks';
 ```
 
+> It is recommended to keep the import statement at the top of your `server.ts` file
 ## Tokens
 
 You can provide tokens from this package into your `app.server.module.ts`
