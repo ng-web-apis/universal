@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/ng-web-apis/universal/compare/v1.13.0...v2.0.0) (2022-01-28)
+
+
+### Features
+
+* update to Angular 12 and Ivy distribution ([#25](https://github.com/ng-web-apis/universal/issues/25)) ([a3e9eaa](https://github.com/ng-web-apis/universal/commit/a3e9eaa63931141d9f78d4d8d326c77f26562f61))
+
 ## [1.13.0](https://github.com/ng-web-apis/universal/compare/v1.12.0...v1.13.0) (2022-01-28)
 
 ### Features
