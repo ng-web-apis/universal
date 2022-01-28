@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/ng-web-apis/universal/compare/v1.12.0...v1.13.0) (2022-01-28)
+
+### Features
+
+-   **MEDIA_DEVICES:** add SSR mock for the new token ([7232e1b](https://github.com/ng-web-apis/universal/commit/7232e1b15d55941cd6d0b3fca8fb457719990547))
+
 ## [1.12.0](https://github.com/ng-web-apis/universal/compare/v1.9.5...v1.12.0) (2021-07-13)
 
 ### Features
