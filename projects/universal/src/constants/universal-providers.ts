@@ -28,6 +28,3 @@ export const UNIVERSAL_PROVIDERS: Provider[] = [
     UNIVERSAL_USER_AGENT,
     UNIVERSAL_WINDOW,
 ];
-
-/** @deprecated use {@link UNIVERSAL_PROVIDERS} */
-export const UNIVERSAL_TOKENS = UNIVERSAL_PROVIDERS;
