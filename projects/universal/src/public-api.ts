@@ -8,6 +8,7 @@ export * from './constants/universal-crypto';
 export * from './constants/universal-history';
 export * from './constants/universal-local-storage';
 export * from './constants/universal-location';
+export * from './constants/universal-media-devices';
 export * from './constants/universal-navigator';
 export * from './constants/universal-performance';
 export * from './constants/universal-session-storage';

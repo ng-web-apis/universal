@@ -5,6 +5,7 @@ import {UNIVERSAL_CRYPTO} from './universal-crypto';
 import {UNIVERSAL_HISTORY} from './universal-history';
 import {UNIVERSAL_LOCAL_STORAGE} from './universal-local-storage';
 import {UNIVERSAL_LOCATION} from './universal-location';
+import {UNIVERSAL_MEDIA_DEVICES} from './universal-media-devices';
 import {UNIVERSAL_NAVIGATOR} from './universal-navigator';
 import {UNIVERSAL_PERFORMANCE} from './universal-performance';
 import {UNIVERSAL_SESSION_STORAGE} from './universal-session-storage';
@@ -20,6 +21,7 @@ export const UNIVERSAL_PROVIDERS: Provider[] = [
     UNIVERSAL_LOCAL_STORAGE,
     UNIVERSAL_SESSION_STORAGE,
     UNIVERSAL_LOCATION,
+    UNIVERSAL_MEDIA_DEVICES,
     UNIVERSAL_NAVIGATOR,
     UNIVERSAL_PERFORMANCE,
     UNIVERSAL_SPEECH_SYNTHESIS,
