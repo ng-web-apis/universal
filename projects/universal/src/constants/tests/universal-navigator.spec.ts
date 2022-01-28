@@ -19,8 +19,8 @@ describe('UNIVERSAL_NAVIGATOR', () => {
 
         expect(mock.userAgent).toBe('');
         expect(mock.plugins.refresh).not.toThrow();
-        expect(mock.plugins.item(0).item(0).description).toBe('');
-        expect(mock.plugins.namedItem('whatever').namedItem('').suffixes).toBe('');
+        expect(mock.plugins.item(0)).toBeNull();
+        expect(mock.plugins.namedItem('whatever')).toBeNull();
     });
 
     it('Reads provided user agent', () => {

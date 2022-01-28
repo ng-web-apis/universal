@@ -54,12 +54,12 @@ const DB_REQUEST: IDBOpenDBRequest = {
 };
 const SELF = ['frames', 'parent', 'self', 'top', 'window'];
 const WINDOW_HANDLER: ProxyHandler<Window> = {
-    get: (windowRef, key: keyof Window) => {
+    get: (windowRef, key: string) => {
         if (SELF.includes(key)) {
             return windowRef;
         }
 
-        return key.startsWith('on') ? null : windowRef[key];
+        return key.startsWith('on') ? null : windowRef[key as keyof Window];
     },
 };
 

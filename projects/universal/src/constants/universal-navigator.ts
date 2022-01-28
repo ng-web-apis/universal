@@ -11,39 +11,13 @@ import {
     emptyObject,
 } from '../utils/functions';
 
-const PLUGIN = new (class extends Array<MimeType> implements Plugin {
-    readonly description = '';
-    readonly filename = '';
-    readonly name = '';
-    readonly version = '';
-
-    item(): MimeType {
-        return {
-            description: '',
-            enabledPlugin: this,
-            suffixes: '',
-            type: '',
-        };
-    }
-    namedItem(): MimeType {
-        return {
-            description: '',
-            enabledPlugin: this,
-            suffixes: '',
-            type: '',
-        };
-    }
-})();
-
-const MIME_TYPES = new (class extends Array<Plugin> implements MimeTypeArray {
-    item(): Plugin {
-        return PLUGIN;
-    }
-    namedItem(): Plugin {
-        return PLUGIN;
-    }
-    refresh() {}
-})();
+function getArray<T>() {
+    return new (class extends Array<T> {
+        item = () => null;
+        namedItem = () => null;
+        refresh() {}
+    })();
+}
 
 /** For older version of TS and Angular that do not support all properties from Navigator */
 interface NavigatorLike extends Navigator {
@@ -65,10 +39,20 @@ export const NAVIGATOR_MOCK: NavigatorLike = {
 
     confirmSiteSpecificTrackingException: alwaysFalse,
     confirmWebWideTrackingException: alwaysFalse,
+    share: alwaysRejected,
+    registerProtocolHandler: emptyFunction,
+    unregisterProtocolHandler: emptyFunction,
     removeSiteSpecificTrackingException: emptyFunction,
     removeWebWideTrackingException: emptyFunction,
     storeSiteSpecificTrackingException: emptyFunction,
     storeWebWideTrackingException: emptyFunction,
+
+    credentials: {
+        create: alwaysRejected,
+        get: alwaysRejected,
+        preventSilentAccess: alwaysRejected,
+        store: alwaysRejected,
+    },
 
     msSaveBlob: alwaysFalse,
     msSaveOrOpenBlob: alwaysFalse,
@@ -114,14 +98,14 @@ export const NAVIGATOR_MOCK: NavigatorLike = {
         getSupportedConstraints: emptyObject,
         getUserMedia: alwaysRejected,
     },
-    mimeTypes: MIME_TYPES,
+    mimeTypes: getArray<MimeType>(),
     msManipulationViewsEnabled: false,
     msMaxTouchPoints: 0,
     msPointerEnabled: false,
     permissions: {
         query: alwaysRejected,
     },
-    plugins: MIME_TYPES,
+    plugins: getArray<Plugin>(),
     pointerEnabled: false,
     serviceWorker: {
         ...EVENT_TARGET,
