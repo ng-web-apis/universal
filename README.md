@@ -58,6 +58,8 @@ from requests. Use the following helpers to harvest that info:
 **server.ts:**
 
 ```typescript
+import {provideLocation, provideUserAgent} from '@ng-web-apis/universal';
+// ...
 app.get('/**/*', (req: Request, res: Response) => {
     res.render('../dist/index', {
         req,

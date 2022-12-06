@@ -1,5 +1,7 @@
 import {ValueProvider} from '@angular/core';
 import {IncomingMessage} from 'http';
+
+import {DOMStringListMock} from '../classes/dom-string-list-mock';
 import {SSR_LOCATION} from '../tokens/ssr-location';
 import {emptyFunction} from './functions';
 
@@ -10,15 +12,7 @@ export function provideLocation(req: IncomingMessage): ValueProvider {
     url.assign = emptyFunction;
     url.reload = emptyFunction;
     url.replace = emptyFunction;
-    url.ancestorOrigins = new (class extends Array<string> implements DOMStringList {
-        contains(): boolean {
-            return false;
-        }
-
-        item(): null {
-            return null;
-        }
-    })();
+    url.ancestorOrigins = new DOMStringListMock();
 
     return {
         provide: SSR_LOCATION,
