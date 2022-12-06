@@ -1,10 +1,11 @@
-import {FactoryProvider} from '@angular/core';
+import {FactoryProvider, Optional} from '@angular/core';
 import {LOCATION} from '@ng-web-apis/common';
+
+import {LocationMock} from '../classes/location-mock';
 import {SSR_LOCATION} from '../tokens/ssr-location';
-import {identity} from '../utils/functions';
 
 export const UNIVERSAL_LOCATION: FactoryProvider = {
     provide: LOCATION,
-    deps: [SSR_LOCATION],
-    useFactory: identity,
+    deps: [[new Optional(), SSR_LOCATION]],
+    useFactory: (location: Location | null) => location || new LocationMock(),
 };
