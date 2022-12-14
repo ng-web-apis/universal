@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/ng-web-apis/universal/compare/v2.0.0...v2.1.0) (2022-12-14)
+
+
+### Features
+
+* provide typesafe mocks for `SSR_USER_AGENT` & `SSR_LOCATION` ([#41](https://github.com/ng-web-apis/universal/issues/41)) ([ee98d1b](https://github.com/ng-web-apis/universal/commit/ee98d1b8cc6685947f8471d6733d5573f993815b))
+
 ## [2.0.0](https://github.com/ng-web-apis/universal/compare/v1.13.0...v2.0.0) (2022-01-28)
 
 
