@@ -1,7 +1,9 @@
 import {DOCUMENT} from '@angular/common';
 import {FactoryProvider, Optional} from '@angular/core';
 import {WINDOW} from '@ng-web-apis/common';
+
 import {BlobMock} from '../classes/blob-mock';
+import {LocationMock} from '../classes/location-mock';
 import {StorageMock} from '../classes/storage-mock';
 import {SSR_LOCATION} from '../tokens/ssr-location';
 import {SSR_USER_AGENT} from '../tokens/ssr-user-agent';
@@ -65,14 +67,14 @@ const WINDOW_HANDLER: ProxyHandler<Window> = {
 
 export function windowFactory(
     document: Document,
-    location: Location,
-    userAgent: string,
+    location: Location | null,
+    userAgent: string | null,
 ): Window {
     const windowMock: Window = {
         ...EVENT_TARGET,
         document,
         localStorage: new StorageMock(),
-        location: location || {},
+        location: location || new LocationMock(),
         navigator: {...NAVIGATOR_MOCK, userAgent: userAgent || ''},
         performance: performanceFactory(),
         sessionStorage: new StorageMock(),
