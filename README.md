@@ -50,6 +50,20 @@ to have type safe mocks for global objects on server side with `UniversalModule`
 export class AppServerModule {}
 ```
 
+Alternatively, if you have a standalone app that is initialized using the bootstrapApplication function, you can import `UniversalModule` in the following manner:
+
+```ts
+const serverConfig: ApplicationConfig = {
+  providers: [
+  	provideServerRendering(), 
+    importProvidersFrom(UniversalModule), // <-- add this
+  ],
+};
+
+const config = mergeApplicationConfig(appConfig, serverConfig);
+const bootstrap = () => bootstrapApplication(AppComponent, config);
+```
+
 ## Special cases
 
 When you use plain SSR without prerender you can retrieve some of the information
