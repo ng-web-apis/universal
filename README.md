@@ -1,3 +1,8 @@
+___
+___
+**Attention!** This repository is archived and the library has been moved to [tinkoff/ng-web-apis](https://github.com/Tinkoff/ng-web-apis) monorepository
+___
+___
 # ![logo](logo.svg) Angular Universal fallbacks
 
 > Part of <img src="web-api.svg" align="top"> [Web APIs for Angular](https://ng-web-apis.github.io/)
